@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_name">Country Name</string>
+    <string name="country_capital">Country Capital</string>
+    <string name="country_region">Country Region</string>
+    <string name="country_currency">Country Currency</string>
+    <string name="country_language">Country Language</string>
+</resources>
