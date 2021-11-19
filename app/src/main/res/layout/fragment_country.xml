@@ -7,7 +7,8 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.CountryFragment">
+        tools:context=".view.CountryFragment"
+        android:background="@android:color/darker_gray">
 
         <ImageView
             android:id="@+id/countryImage"

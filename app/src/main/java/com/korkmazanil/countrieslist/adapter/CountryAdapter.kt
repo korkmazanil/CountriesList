@@ -13,7 +13,7 @@ import com.korkmazanil.countrieslist.util.downloadFromUrl
 import com.korkmazanil.countrieslist.util.placeHolderProgressBar
 import com.korkmazanil.countrieslist.view.FeedFragmentDirections
 
-class CountryAdapter(val countryList : ArrayList<Country>) :
+class CountryAdapter(private val countryList : ArrayList<Country>) :
     RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
     class CountryViewHolder(var view : View) : RecyclerView.ViewHolder(view) {
@@ -21,7 +21,6 @@ class CountryAdapter(val countryList : ArrayList<Country>) :
         var name : TextView = view.findViewById(R.id.name)
         var region : TextView = view.findViewById(R.id.region)
         var imageView : ImageView = view.findViewById(R.id.imageView)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
@@ -35,7 +34,7 @@ class CountryAdapter(val countryList : ArrayList<Country>) :
         holder.region.text = countryList[position].countryRegion
 
         holder.view.setOnClickListener{
-            val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment()
+            val action = FeedFragmentDirections.actionFeedFragmentToCountryFragment(countryList[position].uuid)
             Navigation.findNavController(it).navigate(action)
         }
 

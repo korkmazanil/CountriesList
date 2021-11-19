@@ -51,7 +51,7 @@ class FeedFragment : Fragment() {
                 binding.countryError.visibility = View.GONE
                 binding.countryLoading.visibility = View.VISIBLE
 
-                viewModel.refleshData()
+                viewModel.refreshFromAPI()
 
             }
         observeLiveData()
