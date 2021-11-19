@@ -3,7 +3,6 @@ package com.korkmazanil.countrieslist.viewmodel
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.korkmazanil.countrieslist.model.Country
 import com.korkmazanil.countrieslist.service.CountryAPIService
 import com.korkmazanil.countrieslist.service.CountryDatabase
@@ -67,7 +66,6 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
                         countryError.value = true
                         e.printStackTrace()
                     }
-
                 })
         )
     }
@@ -82,7 +80,7 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
         launch {
             val dao = CountryDatabase(getApplication()).countryDao()
             dao.deleteAllCountries()
-            var listLong = dao.insertAll(*list.toTypedArray()) // list -> individual
+            val listLong = dao.insertAll(*list.toTypedArray()) // list -> individual
 
             var i = 0
             while (i < list.size){

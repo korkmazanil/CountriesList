@@ -53,15 +53,17 @@ class CountryFragment : Fragment() {
 
         viewModel.countryLiveData.observe(viewLifecycleOwner, Observer {country ->
             country?.let{
-                binding.countryName.text = country.countryName
+
+                binding.selectedCountry = country
+
+                /*binding.countryName.text = country.countryName
                 binding.countryRegion.text = country.countryRegion
                 binding.countryCapital.text = country.countryCapital
                 binding.countryLanguage.text = country.countryLanguage
                 binding.countryCurrency.text = country.countryCurrency
                 context?.let {
                     binding.countryImage.downloadFromUrl(country.imageUrl, placeHolderProgressBar(it))
-                }
-
+                }*/
 
             }
         })

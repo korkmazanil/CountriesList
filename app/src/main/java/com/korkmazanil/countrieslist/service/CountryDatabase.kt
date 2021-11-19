@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.korkmazanil.countrieslist.model.Country
 
-@Database(entities = [Country::class], version = 1)
+@Database(entities = [Country::class], version = 1, exportSchema = false)
 abstract class CountryDatabase : RoomDatabase() {
 
     abstract fun countryDao() : CountryDao
